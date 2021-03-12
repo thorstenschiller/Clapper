@@ -21,26 +21,19 @@
  * @author     Thorsten <info@thorstenschiller.com>
  */
 
-class Clapper_Activator {
-
-    public function clapper_install()
-    {
-
-        global $wpdb;
-        global $clapper_db_version;
-        $table_name = $wpdb->prefix . 'clapper';
-        $charset_collate = $wpdb->get_charset_collate();
-
-        $sql = "";
-
-        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-        dbDelta( $sql );
-
-        add_option( 'clapper_db_version', $clapper_db_version );
-
-    }
-
+/**
+ * Register the settings page for the admin area.
+ *
+ * @since    1.0.0
+ */
+public function register_settings_page() {
+	// Create our settings page as a submenu page.
+	add_submenu_page(
+		'tools.php',                             // parent slug
+		__( 'Applause', 'applause' ),      // page title
+		__( 'Applause', 'Applause' ),      // menu title
+		'manage_options',                        // capability
+		'toptal-save',                           // menu_slug
+		array( $this, 'display_settings_page' )  // callable function
+	);
 }
-
-$ClapperActivator = new Clapper_Activator();
-register_activation_hook( __FILE__, array( $ClapperActivator, 'clapper_install' ) );

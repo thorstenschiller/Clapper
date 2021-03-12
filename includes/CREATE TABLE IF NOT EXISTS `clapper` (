@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS `clapper` (
+	`id` int(10) NOT NULL auto_increment,
+	`date` datetime,
+	`vote1` numeric(9,2),
+	`vote2` numeric(9,2),
+	`vote3` numeric(9,2),
+	`none` numeric(9,2),
+	PRIMARY KEY( `id` )
+);

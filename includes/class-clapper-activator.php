@@ -20,6 +20,7 @@
  * @subpackage Clapper/includes
  * @author     Thorsten <info@thorstenschiller.com>
  */
+
 class Clapper_Activator {
 
     public function clapper_install()
@@ -36,8 +37,7 @@ class Clapper_Activator {
 					`vote1` numeric(9,2),
 					`vote2` numeric(9,2),
 					`vote3` numeric(9,2),
-					PRIMARY KEY( `id` )
-)";
+					PRIMARY KEY (id) )";
 
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
         dbDelta( $sql );

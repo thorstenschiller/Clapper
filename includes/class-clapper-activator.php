@@ -31,13 +31,7 @@ class Clapper_Activator {
         $table_name = $wpdb->prefix . 'clapper';
         $charset_collate = $wpdb->get_charset_collate();
 
-        $sql = "CREATE TABLE $table_name (
-					`id` int(10) NOT NULL auto_increment,
-					`date` datetime,
-					`vote1` numeric(9,2),
-					`vote2` numeric(9,2),
-					`vote3` numeric(9,2),
-					PRIMARY KEY (id) )";
+        $sql = "";
 
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
         dbDelta( $sql );

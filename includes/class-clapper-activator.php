@@ -34,6 +34,7 @@ class Clapper_Activator {
 	}
 
 }
+
 global $wpdb;
 $plugin_name_db_version = '1.0';
 $table_name = $wpdb->prefix . "clapper_date"; 
